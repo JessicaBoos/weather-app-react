@@ -1,3 +1,5 @@
 .Weather {
-  background-color: aquamarine;
+  border: 1px solid #dadde1;
+  padding: 15px;
+  border-radius: 5px;
 }
