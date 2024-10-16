@@ -1,4 +1,6 @@
+import React from "react";
 import "./App.css";
+import Weather from "./Weather";
 
 export default function App() {
   return (
@@ -6,6 +8,7 @@ export default function App() {
       {" "}
       <div className="container">
         <h1>Weather App</h1>
+        <Weather />
         <footer>
           This project was coded by{" "}
           <a href="https://github.com/JessicaBoos" target="_blank">
