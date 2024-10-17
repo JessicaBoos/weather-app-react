@@ -37,8 +37,11 @@
 .Weather .temperature {
   font-weight: bold;
   line-height: 64px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .Weather .degrees {
   font-size: 20px;
+  margin-top: 13px;
 }
