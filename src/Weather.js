@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.city,
+      date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       temperature: Math.round(response.data.temperature.current),
       humidity: response.data.temperature.humidity,
@@ -30,7 +32,7 @@ export default function Weather() {
                 autoFocus="on"
               />
             </div>
-            <div className="col-2">
+            <div className="col-1">
               <input type="submit" value="⌕" className="btn btn-primary" />
             </div>
           </div>
@@ -38,8 +40,10 @@ export default function Weather() {
 
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>Wednesday 07:00</li>
-          <li>{weatherData.description}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
           <div className="col-6 weather-icon d-flex">
@@ -58,7 +62,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "bb5982aa3c1a3d9fb3839bo024tffc09";
-    let query = "New York";
+    let query = props.defaultCity;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
