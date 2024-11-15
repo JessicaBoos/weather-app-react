@@ -59,7 +59,7 @@ export default function Weather(props) {
 
         <WeatherInfo data={weatherData} />
 
-        <WeatherForecast />
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
