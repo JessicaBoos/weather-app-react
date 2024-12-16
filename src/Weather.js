@@ -41,7 +41,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <div className="row">
+          <div className="row d-flex w-100 justify-content-evenly align-items-center">
             <div className="col-10">
               <input
                 type="search"

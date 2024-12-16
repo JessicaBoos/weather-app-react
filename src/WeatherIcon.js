@@ -21,7 +21,6 @@ export default function WeatherIcon(props) {
     "snow-night": "SNOW",
     "mist-day": "FOG",
     "mist-night": "FOG",
-    "overcast clouds": "FOG",
   };
   return (
     <ReactAnimatedWeather
